@@ -1,0 +1,13 @@
+version: '3.6'
+
+services:
+    thyme:
+        image: self/thyme
+        build: .
+        volumes:
+            - /tmp/.X11-unix:/tmp/.X11-unix
+            - ./data:/data
+        environment:
+            - DISPLAY=$DISPLAY
+            - THYME_INTERVAL=${THYME_INTERVAL:-10}
+            - THYME_STATS=${THYME_STATS:-false}
