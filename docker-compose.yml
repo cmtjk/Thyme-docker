@@ -5,7 +5,8 @@ services:
         image: self/thyme
         build: .
         volumes:
-            - /tmp/.X11-unix:/tmp/.X11-unix
+            - /tmp/.X11-unix:/tmp/.X11-unix:ro
+            - /etc/localtime:/etc/localtime:ro
             - ./data:/data
         environment:
             - DISPLAY=$DISPLAY
