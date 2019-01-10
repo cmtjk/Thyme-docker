@@ -24,7 +24,8 @@ THYME_INTERVAL=30 docker-compose up -d
 
 ## Create statistic
 ```
-THYME_STATS=true docker-compose up
+# Without stop the container
+docker-compose exec thyme bash -c "THYME_STATS=true ./entrypoint.sh"
 ```
 
 `thyme.html` will be saved in `./data`.
